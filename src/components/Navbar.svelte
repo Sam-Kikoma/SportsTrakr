@@ -6,7 +6,7 @@
 	};
 </script>
 
-<nav class="flex h-[20%] max-w-full justify-between overflow-hidden px-8 py-4 text-white">
+<nav class="flex max-w-full justify-between overflow-hidden px-8 py-8 text-white">
 	<div>
 		<p>Trakr</p>
 	</div>
@@ -16,8 +16,8 @@
 		<a href="/">News</a>
 	</div>
 	<div class="hidden md:flex md:gap-4">
-		<a href="/">Sign Up</a>
-		<a href="/">Login</a>
+		<a href="/auth/signup">Sign Up</a>
+		<a href="/auth/login">Login</a>
 	</div>
 	<!-- Hamburger -->
 	{#if !showMenu}
