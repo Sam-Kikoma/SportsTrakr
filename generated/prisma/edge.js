@@ -122,7 +122,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/home/wasabi/Web/SportsTrakr/generated/prisma",
+      "value": "/home/sam/Web/SportsTrakr/generated/prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -136,12 +136,11 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "/home/wasabi/Web/SportsTrakr/prisma/schema.prisma",
+    "sourceFilePath": "/home/sam/Web/SportsTrakr/prisma/schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
-    "rootEnvPath": "../../.env",
-    "schemaEnvPath": "../../.env"
+    "rootEnvPath": null
   },
   "relativePath": "../../prisma",
   "clientVersion": "6.5.0",
@@ -150,6 +149,7 @@ const config = {
     "db"
   ],
   "activeProvider": "postgresql",
+  "postinstall": false,
   "inlineDatasources": {
     "db": {
       "url": {
