@@ -21,6 +21,8 @@
 		"@sveltejs/kit": "^2.16.0",
 		"@sveltejs/vite-plugin-svelte": "^5.0.0",
 		"@tailwindcss/vite": "^4.0.0",
+		"@types/bcrypt": "^5.0.2",
+		"@types/jsonwebtoken": "^9.0.9",
 		"@types/node": "^22.13.17",
 		"eslint": "^9.18.0",
 		"eslint-config-prettier": "^10.0.1",
@@ -39,6 +41,8 @@
 	},
 	"dependencies": {
 		"@prisma/client": "^6.5.0",
-		"iconify-icon": "^2.3.0"
+		"bcrypt": "^5.1.1",
+		"iconify-icon": "^2.3.0",
+		"jsonwebtoken": "^9.0.2"
 	}
 }
