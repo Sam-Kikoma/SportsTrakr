@@ -3,15 +3,14 @@
 </script>
 
 <section class="flex h-screen flex-col justify-between bg-gray-900 text-white">
-	<Navbar />
+	<Navbar signupLink="/signup" loginLink="/login" />
 	<div class="flex flex-1 flex-col items-center justify-center px-6 text-center md:px-0">
 		<h2 class="mb-4 text-4xl leading-tight font-extrabold md:text-6xl">
 			Track the Game. <br />
 			Own the Score.
 		</h2>
 		<p class="mb-8 max-w-xl text-lg text-gray-300 md:text-xl">
-			Your personalized hub for real-time scores, stats, and football insights — beautifully simple
-			and blazingly fast.
+			One stop shop for all your sports needs.
 		</p>
 		<a
 			href="/signup"
