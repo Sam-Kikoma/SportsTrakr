@@ -1,10 +1,14 @@
 <script lang="ts">
+	import { enhance } from '$app/forms';
+	import Error from '../../../components/Error.svelte';
+
+	export let form: any;
 </script>
 
 <div class="flex h-screen w-full items-center justify-center bg-gray-900 p-1 text-white">
-	<form class="flex flex-col rounded-xl bg-gray-800 px-10 py-8">
+	<form class="flex flex-col rounded-xl bg-gray-800 px-10 py-8" method="POST" use:enhance>
 		<h1 class="mb-8 text-center text-3xl font-bold text-amber-200">Sign Up</h1>
-
+		<Error message={form?.message} />
 		<div class="mb-6">
 			<label for="email" class="mb-3 block text-sm font-medium text-gray-300">Email</label>
 			<input
@@ -48,7 +52,7 @@
 			>
 				Create Account
 			</button>
-			<a href="/signup" class="block text-center underline">Already have an account? Login</a>
+			<a href="/login" class="block text-center underline">Already have an account? Login</a>
 		</div>
 	</form>
 </div>
