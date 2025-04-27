@@ -9,14 +9,12 @@
 			Track the Game. <br />
 			Own the Score.
 		</h2>
-		<p class="mb-8 max-w-xl text-lg text-gray-300 md:text-xl">
-			One stop shop for all your sports needs.
-		</p>
+		<p class="mb-8 max-w-xl text-lg text-gray-300 md:text-xl">Sports my boiii!</p>
 		<a
 			href="/signup"
 			class="rounded-full bg-amber-600 px-8 py-3 text-lg font-semibold text-black transition hover:bg-amber-500"
 		>
-			Get Started for Free
+			Get Started
 		</a>
 	</div>
 
