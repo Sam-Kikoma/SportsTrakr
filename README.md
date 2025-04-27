@@ -1,6 +1,6 @@
 # SportsTrakr
 
-A modern web application for tracking sports scores and favorite games across multiple sports leagues.
+Web application for tracking sports scores and favorite games across multiple sports leagues.
 
 ## Overview
 
