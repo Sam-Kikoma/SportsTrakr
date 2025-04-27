@@ -11,7 +11,7 @@
 		const detailedFavs = await Promise.all(
 			data.map(async (item: any) => {
 				const res = await fetch(
-					`http://site.api.espn.com/apis/site/v2/sports/${item.sport}/${item.league}/scoreboard/${item.sportId}`
+					`https://site.api.espn.com/apis/site/v2/sports/${item.sport}/${item.league}/scoreboard/${item.sportId}`
 				);
 				const event = await res.json();
 				return {
