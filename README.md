@@ -13,24 +13,24 @@ SportsTrakr allows users to:
 
 ## Tech Stack
 
-- **Frontend**: SvelteKit 2.x with Svelte 5 runes
-- **UI**: TailwindCSS 4.x
-- **Database**: PostgreSQL with Prisma ORM
+- **SvelteKit**
+- **TailwindCSS**
+- **PostgreSQL with Prisma ORM**
 - **Authentication**: JWT-based authentication
-- **API**: ESPN Sports API integration (proxied via backend)
+- **API**: ESPN Sports API integration
 
 ## Prerequisites
 
 - Node.js (v18+)
-- npm/pnpm/yarn
-- PostgreSQL database or Prisma Accelerate account
+- npm
+- PostgreSQL
 
 ## Installation
 
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/yourusername/SportsTrakr.git
+   git clone [https://github.com/Sam-Kikoma/SportsTrakr.git]
    cd SportsTrakr
    ```
 
@@ -72,7 +72,7 @@ The application will be available at http://localhost:5173
 
 ## Features
 
-- **Multi-sport tracking**: Follow football/soccer, basketball, and NFL games
+- **Multi-sport tracking**: Follow football, basketball, and NFL games
 - **League selection**: Filter games by specific leagues
 - **Favorites**: Save games to your personal favorites list
 - **User authentication**
