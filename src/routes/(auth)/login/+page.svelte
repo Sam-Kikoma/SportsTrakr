@@ -1,13 +1,13 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
-	import Error from '../../../components/Error.svelte';
-	export let form: any;
+	import Toast from '../../../components/Toast.svelte';
+	let { form } = $props();
 </script>
 
 <div class="flex h-screen w-full items-center justify-center bg-gray-900 p-1 text-white">
 	<form class="flex flex-col rounded-xl bg-gray-800 px-10 py-8" method="POST" use:enhance>
 		<h1 class="mb-8 text-center text-3xl font-bold text-amber-200">Login</h1>
-		<Error message={form?.message} />
+		<Toast message={form?.message || ''} type="error" />
 		<div class="mb-6">
 			<label for="email" class="mb-3 block text-sm font-medium text-gray-300">Email</label>
 			<input
