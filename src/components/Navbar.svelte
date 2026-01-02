@@ -6,7 +6,7 @@
 		loginLink?: string;
 		logoutLink?: string;
 	}
-	// Navbar props
+
 	let { signupLink = undefined, loginLink = undefined, logoutLink = undefined }: Props = $props();
 
 	let showMenu = $state(false);
@@ -15,51 +15,77 @@
 	};
 </script>
 
-<nav class="flex max-w-full items-center justify-between text-center">
-	<div class="p-4">
-		<a href="/" class="text-2xl font-bold text-amber-600">Trakr</a>
+<nav class="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-4">
+	<div class="flex items-center">
+		<a
+			href="/"
+			class="group flex items-center gap-2 text-2xl font-black tracking-tighter text-white"
+		>
+			<div
+				class="flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-500 transition-colors group-hover:bg-indigo-400"
+			>
+				<Icon icon="lucide:trophy" class="text-slate-950" width="20" height="20" />
+			</div>
+			Trakr
+		</a>
 	</div>
 
-	<!-- Desktop menu -->
-	{#if signupLink || loginLink || logoutLink}
-		<div class="hidden p-4 md:flex md:gap-8">
-			{#if signupLink}
-				<a href={signupLink} class="hover:underline">Sign Up</a>
-			{/if}
-			{#if loginLink}
-				<a href={loginLink}>Login</a>
-			{/if}
-			{#if logoutLink}
-				<a href={logoutLink}>Logout</a>
-			{/if}
-		</div>
-	{/if}
+	<div class="hidden items-center gap-6 md:flex">
+		{#if loginLink}
+			<a
+				href={loginLink}
+				class="text-sm font-bold text-slate-400 transition-colors hover:text-white"
+			>
+				Log in
+			</a>
+		{/if}
+		{#if signupLink}
+			<a
+				href={signupLink}
+				class="rounded-full bg-slate-50 px-5 py-2 text-sm font-bold text-slate-950 transition-all hover:scale-[1.02] hover:bg-white"
+			>
+				Get Started
+			</a>
+		{/if}
+		{#if logoutLink}
+			<a
+				href={logoutLink}
+				class="group flex items-center gap-2 text-sm font-bold text-slate-400 transition-colors hover:text-red-400"
+			>
+				Logout
+				<Icon icon="lucide:log-out" width="16" height="16" />
+			</a>
+		{/if}
+	</div>
 
-	<!-- Hamburger -->
-	{#if !showMenu}
-		<button class="p-4 md:hidden" onclick={toggleMenu}>
-			<Icon icon="radix-icons:hamburger-menu" width="15" height="15" />
-		</button>
-	{:else}
-		<button class="p-4 md:hidden" onclick={toggleMenu}>
-			<Icon icon="radix-icons:cross-2" width="15" height="15" />
-		</button>
-	{/if}
+	<button
+		class="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-800 text-slate-400 md:hidden"
+		onclick={toggleMenu}
+	>
+		{#if !showMenu}
+			<Icon icon="lucide:menu" width="20" height="20" />
+		{:else}
+			<Icon icon="lucide:x" width="20" height="20" />
+		{/if}
+	</button>
 
-	<!-- Mobile menu -->
-	{#if signupLink || loginLink || logoutLink}
+	{#if showMenu}
 		<div
-			class={`absolute top-[5%] left-0 flex h-[20%] w-full flex-col gap-8 bg-gray-900 text-center md:hidden ${showMenu ? '' : 'hidden'}`}
+			class="absolute inset-x-0 top-full z-[100] border-b border-slate-800 bg-slate-950/95 p-6 backdrop-blur-xl md:hidden"
 		>
-			{#if signupLink}
-				<a href={signupLink} class="hover:underline">Sign Up</a>
-			{/if}
-			{#if loginLink}
-				<a href={loginLink}>Login</a>
-			{/if}
-			{#if logoutLink}
-				<a href={logoutLink}>Logout</a>
-			{/if}
+			<div class="flex flex-col gap-6 text-center">
+				{#if signupLink}
+					<a href={signupLink} class="text-lg font-bold text-white" onclick={toggleMenu}>Sign Up</a>
+				{/if}
+				{#if loginLink}
+					<a href={loginLink} class="text-lg font-bold text-slate-400" onclick={toggleMenu}>Login</a
+					>
+				{/if}
+				{#if logoutLink}
+					<a href={logoutLink} class="text-lg font-bold text-red-400" onclick={toggleMenu}>Logout</a
+					>
+				{/if}
+			</div>
 		</div>
 	{/if}
 </nav>

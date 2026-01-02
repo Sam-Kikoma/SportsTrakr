@@ -6,20 +6,30 @@
 	import Nfl from '../../../components/Nfl.svelte';
 	import Favourites from '../../../components/Favourites.svelte';
 
-	// Tabs
 	let items = ['football', 'basketball', 'nfl', 'favourites'];
 	let activeItem = $state('football');
+
 	const handleChange = (item: string) => {
 		activeItem = item;
 	};
 </script>
 
-<div class="flex h-screen flex-col bg-gray-900 px-6 py-4 text-white">
-	<div>
-		<Navbar logoutLink="/logout" />
+<header class="sticky top-0 z-50 border-b border-slate-800/40 bg-slate-950/60 backdrop-blur-md">
+	<Navbar logoutLink="/logout" />
+</header>
+
+<main class="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+	<div class="mb-8 flex justify-center">
+		<div
+			class="inline-block rounded-2xl border border-slate-800 bg-slate-900/40 p-1.5 backdrop-blur-sm"
+		>
+			<Tabs {items} active={activeItem} onTabChange={handleChange} />
+		</div>
 	</div>
-	<Tabs {items} active={activeItem} onTabChange={handleChange} />
-	<div>
+
+	<section
+		class="relative min-h-[60vh] rounded-3xl border border-slate-800/50 bg-slate-900/20 p-6 backdrop-blur-sm"
+	>
 		{#if activeItem === 'football'}
 			<Football />
 		{:else if activeItem === 'basketball'}
@@ -29,8 +39,5 @@
 		{:else if activeItem === 'favourites'}
 			<Favourites />
 		{/if}
-	</div>
-</div>
-
-<style>
-</style>
+	</section>
+</main>

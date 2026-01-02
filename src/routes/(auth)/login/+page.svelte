@@ -4,42 +4,77 @@
 	let { form } = $props();
 </script>
 
-<div class="flex h-screen w-full items-center justify-center bg-gray-900 p-1 text-white">
-	<form class="flex flex-col rounded-xl bg-gray-800 px-10 py-8" method="POST" use:enhance>
-		<h1 class="mb-8 text-center text-3xl font-bold text-amber-200">Login</h1>
-		<Toast message={form?.message || ''} type="error" />
-		<div class="mb-6">
-			<label for="email" class="mb-3 block text-sm font-medium text-gray-300">Email</label>
-			<input
-				type="email"
-				name="email"
-				id="email"
-				class="w-full rounded-xl bg-gray-800 p-4 text-white ring-1 ring-gray-700 placeholder:text-gray-500 focus:ring-2 focus:ring-amber-500 focus:outline-none"
-				placeholder="name@email.com"
-				required
-			/>
-		</div>
+<div class="flex flex-1 items-center justify-center p-6">
+	<div class="w-full max-w-md">
+		<form
+			class="relative rounded-2xl border border-slate-800 bg-slate-900/40 p-8 shadow-2xl backdrop-blur-sm"
+			method="POST"
+			use:enhance
+		>
+			<div class="mb-10 text-center">
+				<h1 class="text-3xl font-bold tracking-tight text-white">Welcome back</h1>
+				<p class="mt-2 text-sm text-slate-400">Enter your credentials to access your account</p>
+			</div>
 
-		<div class="mb-8">
-			<label for="password" class="mb-3 block text-sm font-medium text-gray-300">Password</label>
-			<input
-				type="password"
-				name="password"
-				id="password"
-				class="w-full rounded-xl bg-gray-800 p-4 text-white ring-1 ring-gray-700 placeholder:text-gray-500 focus:ring-2 focus:ring-amber-500 focus:outline-none"
-				required
-				placeholder="••••••••"
-			/>
-		</div>
+			<Toast message={form?.message || ''} type="error" />
 
-		<div class="mx-auto mt-4">
-			<button
-				type="submit"
-				class="mb-4 w-full rounded-xl bg-amber-600 px-6 py-3 text-lg font-semibold text-black transition hover:bg-amber-500 focus:ring-2 focus:ring-amber-400 focus:ring-offset-2 focus:ring-offset-gray-900 focus:outline-none"
-			>
-				Sign In
-			</button>
-			<a href="/signup" class="block text-center underline">Don't have an account? Create one</a>
-		</div>
-	</form>
+			<div class="space-y-6">
+				<div>
+					<label
+						for="email"
+						class="mb-2 block text-xs font-bold tracking-widest text-slate-500 uppercase"
+					>
+						Email Address
+					</label>
+					<input
+						type="email"
+						name="email"
+						id="email"
+						class="w-full rounded-lg border border-slate-800 bg-slate-950 px-4 py-3 text-white transition-all placeholder:text-slate-600 focus:border-indigo-500/50 focus:ring-4 focus:ring-indigo-500/10 focus:outline-none"
+						placeholder="name@email.com"
+						required
+					/>
+				</div>
+
+				<div>
+					<div class="mb-2 flex items-center justify-between">
+						<label
+							for="password"
+							class="block text-xs font-bold tracking-widest text-slate-500 uppercase"
+						>
+							Password
+						</label>
+					</div>
+					<input
+						type="password"
+						name="password"
+						id="password"
+						class="w-full rounded-lg border border-slate-800 bg-slate-950 px-4 py-3 text-white transition-all placeholder:text-slate-600 focus:border-indigo-500/50 focus:ring-4 focus:ring-indigo-500/10 focus:outline-none"
+						required
+						placeholder="••••••••"
+					/>
+				</div>
+
+				<div class="pt-2">
+					<button
+						type="submit"
+						class="w-full rounded-lg bg-slate-50 py-3 text-sm font-bold text-slate-950 transition-all hover:scale-[1.01] hover:bg-white active:scale-[0.99]"
+					>
+						Sign In
+					</button>
+				</div>
+
+				<div class="text-center">
+					<a
+						href="/signup"
+						class="text-sm font-medium text-slate-400 transition-colors hover:text-white"
+					>
+						Don't have an account? <span class="text-indigo-400 underline underline-offset-4"
+							>Create one</span
+						>
+					</a>
+				</div>
+			</div>
+		</form>
+	</div>
 </div>
