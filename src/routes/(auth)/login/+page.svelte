@@ -4,6 +4,26 @@
 	let { form } = $props();
 </script>
 
+<!-- Toast for test credentials -->
+<div
+	class="toast-info"
+	style="background: #e0f7fa; color: #006064; padding: 0.75rem 1.25rem; border-radius: 6px; margin-bottom: 1rem; font-size: 1rem; display: flex; align-items: center; gap: 0.5rem;"
+>
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		width="20"
+		height="20"
+		fill="currentColor"
+		viewBox="0 0 20 20"
+		><path
+			d="M10 2a8 8 0 100 16 8 8 0 000-16zm.75 12.25h-1.5v-1.5h1.5v1.5zm0-3h-1.5V6.5h1.5v2.75z"
+		/></svg
+	>
+	<span
+		>Use <strong>test4@email.com</strong> and <strong>test4</strong> as test credentials to log in.</span
+	>
+</div>
+
 <div class="flex flex-1 items-center justify-center p-6">
 	<div class="w-full max-w-md">
 		<form
